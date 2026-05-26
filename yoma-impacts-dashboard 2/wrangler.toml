@@ -1,0 +1,17 @@
+# wrangler.toml
+# Cloudflare Pages project configuration for Yoma Impacts Dashboard.
+#
+# Deploy with:   npx wrangler pages deploy public --project-name yoma-impacts-dashboard
+# Or connect via Cloudflare dashboard → Workers & Pages → Connect to Git.
+
+name = "yoma-impacts-dashboard"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "public"
+
+# No build step — this is a static app with no bundler.
+# Cloudflare Pages will serve the public/ directory directly.
+
+[vars]
+# Injected as global constants by a build step if you add one later.
+# CONTRACT_ENTITY_DID = "did:ixo:your-contract-entity"
+# COLLECTION_ID       = "UNICEF-2024-001"

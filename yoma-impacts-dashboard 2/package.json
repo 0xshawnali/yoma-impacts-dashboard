@@ -1,0 +1,18 @@
+{
+  "name": "yoma-impacts-dashboard",
+  "version": "1.0.0",
+  "description": "Yoma Impacts Exchange multi-funder reporting dashboard — IXO Portal iframe app",
+  "private": true,
+  "scripts": {
+    "dev":    "npx serve public -l 3000",
+    "deploy": "npx wrangler pages deploy public --project-name yoma-impacts-dashboard",
+    "lint":   "npx html-validate public/index.html"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0",
+    "serve": "^14.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
