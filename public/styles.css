@@ -5,37 +5,54 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:           #F9FAFB;
+  /* ── Yoma brand palette (sourced from app.yoma.world design system) ── */
+  --bg:           #F9F6FB;
   --bg-card:      #FFFFFF;
-  --bg-muted:     #F3F4F6;
-  --border:       #E5E7EB;
-  --border-str:   #D1D5DB;
-  --purple:       #7C3AED;
-  --purple-mid:   #A855F7;
-  --purple-light: #EDE9FE;
-  --purple-pale:  #F5F3FF;
-  --orange:       #EA580C;
-  --green:        #16A34A;
-  --green-light:  #DCFCE7;
-  --amber:        #D97706;
+  --bg-muted:     #F4EDF7;
+  --border:       #EAE0F0;
+  --border-str:   #D8C8E8;
+
+  /* Primary — Yoma deep purple */
+  --purple:       #41204b;
+  --purple-mid:   #6B3578;
+  --purple-light: #E8D8F2;
+  --purple-pale:  #F4EDF7;
+
+  /* Coral — Yoma accent (logo arc + error) */
+  --coral:        #fe4d57;
+  --coral-light:  #FFEBEC;
+  --orange:       #fe4d57;   /* alias for existing coral usages */
+
+  /* Green — Yoma secondary */
+  --green:        #387f6a;
+  --green-light:  #DDF2EC;
+
+  /* Info blue — Yoma info */
+  --teal:         #4cade9;
+  --teal-light:   #DFF1FC;
+
+  /* Semantic */
+  --amber:        #F9AB3E;
   --amber-light:  #FEF3C7;
-  --red:          #DC2626;
-  --red-light:    #FEE2E2;
-  --teal:         #0891B2;
-  --teal-light:   #E0F2FE;
-  --text-pri:     #111827;
-  --text-sec:     #6B7280;
-  --text-mut:     #9CA3AF;
-  --shadow-sm:    0 1px 3px rgba(0,0,0,0.06);
-  --radius-md:    8px;
-  --radius-lg:    12px;
+  --red:          #fe4d57;
+  --red-light:    #FFEBEC;
+
+  /* Text */
+  --text-pri:     #1A0B22;
+  --text-sec:     #6B5877;
+  --text-mut:     #9B8FAA;
+
+  --shadow-sm:    0 2px 15px -3px rgba(65,32,75,0.08);
+  --shadow-md:    0 4px 24px -4px rgba(65,32,75,0.12);
+  --radius-md:    10px;
+  --radius-lg:    14px;
 }
 
 html { font-size: 14px; }
 body {
   background: var(--bg);
   color: var(--text-pri);
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
   min-height: 100%;
   padding: 0;
 }
@@ -58,7 +75,7 @@ body {
   background: var(--purple);
   flex-shrink: 0;
 }
-.portal-banner-did { font-family: 'DM Mono', monospace; font-size: 10px; color: #6D28D9; }
+.portal-banner-did { font-family: 'Montserrat', monospace; font-size: 10px; color: #6D28D9; }
 
 /* ── Dashboard shell ── */
 .dashboard { display: flex; flex-direction: column; min-height: 100%; }
@@ -76,12 +93,8 @@ body {
 
 .dash-wordmark { display: flex; align-items: center; gap: 10px; }
 .dash-logo {
-  width: 32px; height: 32px;
-  background: linear-gradient(135deg, var(--purple) 0%, var(--purple-mid) 100%);
-  border-radius: 8px;
+  width: 38px; height: 38px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 15px; font-weight: 900; color: #fff;
-  box-shadow: 0 2px 6px rgba(124,58,237,0.3);
   flex-shrink: 0;
 }
 .dash-title  { font-size: 16px; font-weight: 800; color: var(--text-pri); letter-spacing: -0.3px; }
@@ -109,7 +122,7 @@ body {
   margin-bottom: -1px;
 }
 .vnav-btn:hover { border-color: var(--purple); color: var(--purple); }
-.vnav-btn.active { background: var(--purple); color: #fff; border-color: var(--purple); box-shadow: 0 2px 6px rgba(124,58,237,0.25); }
+.vnav-btn.active { background: var(--purple); color: #fff; border-color: var(--purple); box-shadow: 0 2px 8px rgba(65,32,75,0.30); }
 
 .sub-nav {
   display: flex; gap: 0;
@@ -155,7 +168,7 @@ body {
   box-shadow: var(--shadow-sm);
 }
 .kpi-label  { font-size: 10px; color: var(--text-sec); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-.kpi-value  { font-size: 22px; font-weight: 800; font-family: 'DM Mono', monospace; letter-spacing: -0.5px; display: flex; align-items: baseline; gap: 5px; }
+.kpi-value  { font-size: 22px; font-weight: 800; font-family: 'Montserrat', monospace; letter-spacing: -0.5px; display: flex; align-items: baseline; gap: 5px; }
 .kpi-target { font-size: 11px; color: var(--text-mut); font-weight: 400; }
 .kpi-meta   { display: flex; justify-content: space-between; font-size: 10px; color: var(--text-mut); }
 .kpi-bar    { height: 4px; background: var(--bg-muted); border-radius: 2px; overflow: hidden; }
@@ -221,8 +234,152 @@ body {
 .mini-bar      { width: 56px; height: 5px; background: var(--bg-muted); border-radius: 3px; overflow: hidden; flex-shrink: 0; }
 .mini-fill     { height: 100%; border-radius: 3px; }
 
+/* ── Funder views ── */
+.funder-header {
+  background: var(--funder-light, #F9FAFB);
+  border: 1px solid var(--funder-border, #E5E7EB);
+  border-left: 4px solid var(--funder-color, #7C3AED);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  margin-bottom: 4px;
+}
+.funder-header-top {
+  display: flex; align-items: flex-start; gap: 14px; flex-wrap: wrap;
+}
+.funder-logo-chip {
+  width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: 900; color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.funder-title-block { flex: 1; min-width: 140px; }
+.funder-name        { font-size: 15px; font-weight: 800; color: var(--text-pri); }
+.funder-mandate     { font-size: 11px; color: var(--text-sec); margin-top: 3px; }
+.funder-contrib-box {
+  margin-left: auto; text-align: right; flex-shrink: 0;
+  border: 1px solid; border-radius: var(--radius-md);
+  padding: 9px 14px; min-width: 140px;
+}
+.funder-contrib-label  { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-sec); }
+.funder-contrib-value  { font-size: 19px; font-weight: 800; font-family: 'Montserrat', monospace; letter-spacing: -0.5px; margin: 3px 0 2px; }
+.funder-contrib-period { font-size: 10px; color: var(--text-sec); }
+.funder-focus-tags     { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 13px; }
+.focus-tag {
+  font-size: 11px; font-weight: 600; padding: 3px 10px;
+  border-radius: 12px; border: 1px solid; white-space: nowrap;
+}
+
+.funder-narrative {
+  font-size: 13px; line-height: 1.7; color: var(--text-sec);
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 14px 16px;
+  margin-bottom: 4px;
+}
+
+/* Allocation breakdown */
+.alloc-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 14px 18px;
+  display: flex; flex-direction: column; gap: 13px;
+  box-shadow: var(--shadow-sm);
+}
+.alloc-row   { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.alloc-label { font-size: 12px; color: var(--text-pri); font-weight: 500; min-width: 200px; flex: 1; }
+.alloc-right { display: flex; align-items: center; gap: 10px; min-width: 220px; }
+.alloc-bar-wrap { flex: 1; height: 6px; background: var(--bg-muted); border-radius: 3px; overflow: hidden; min-width: 60px; }
+.alloc-bar-fill { height: 100%; border-radius: 3px; transition: width 0.8s cubic-bezier(0.4,0,0.2,1); }
+.alloc-pct    { font-size: 11px; font-weight: 700; white-space: nowrap; min-width: 30px; text-align: right; }
+.alloc-amount { font-size: 11px; color: var(--text-sec); font-family: 'Montserrat', monospace; white-space: nowrap; }
+
+/* Milestone tracker */
+.ms-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 14px 18px;
+  display: flex; flex-direction: column; gap: 0;
+  box-shadow: var(--shadow-sm);
+}
+.ms-row {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding: 10px 0; border-bottom: 1px solid var(--border);
+}
+.ms-row:last-child { border-bottom: none; }
+.ms-dot    { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+.ms-label  { font-size: 12px; color: var(--text-pri); font-weight: 500; flex: 1; min-width: 160px; }
+.ms-due    { font-size: 11px; color: var(--text-sec); font-family: 'Montserrat', monospace; white-space: nowrap; }
+
+/* ── Platform analytics ── */
+.growth-up { color: #16A34A; font-size: 11px; font-weight: 700; }
+
+.analytics-period {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 8px 14px; border-radius: var(--radius-md);
+  background: var(--bg-muted); border: 1px solid var(--border);
+  margin-bottom: 4px;
+}
+.analytics-period-label {
+  font-size: 9px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--text-sec);
+}
+.analytics-period-value {
+  font-size: 12px; font-weight: 700; color: var(--text-pri);
+  font-family: 'Montserrat', monospace;
+}
+.analytics-period-vs {
+  font-size: 11px; color: var(--text-sec);
+}
+
+.geo-map-container {
+  width: 100%; height: 300px;
+  border-radius: var(--radius-lg);
+  background: #0c1322;
+  overflow: hidden;
+  border: 1px solid #1e293b;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 4px;
+}
+
+/* ── Digital marketplace funnel ── */
+.funnel-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 14px 18px;
+  display: flex; flex-direction: column; gap: 0;
+  box-shadow: var(--shadow-sm);
+}
+.funnel-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 0; border-bottom: 1px solid var(--border);
+}
+.funnel-row:last-child { border-bottom: none; }
+.funnel-step {
+  width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 800; color: #fff;
+}
+.funnel-label {
+  font-size: 12px; color: var(--text-pri); font-weight: 500;
+  min-width: 190px; flex-shrink: 0;
+}
+.funnel-bar-wrap {
+  flex: 1; height: 8px; background: var(--bg-muted);
+  border-radius: 4px; overflow: hidden; min-width: 40px;
+  transition: max-width 0.3s ease;
+}
+.funnel-bar-fill {
+  height: 100%; border-radius: 4px;
+  transition: width 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+.funnel-nums {
+  display: flex; align-items: baseline; gap: 5px;
+  white-space: nowrap; min-width: 120px; justify-content: flex-end;
+}
+.funnel-value  { font-size: 13px; font-weight: 800; font-family: 'Montserrat', monospace; }
+.funnel-target { font-size: 11px; color: var(--text-mut); }
+.funnel-pct    { font-size: 11px; font-weight: 700; min-width: 30px; text-align: right; }
+
 /* ── Responsive ── */
 @media (max-width: 600px) {
   .kpi-grid { grid-template-columns: repeat(2, 1fr); }
   .dash-header { flex-direction: column; }
+  .funder-contrib-box { margin-left: 0; width: 100%; text-align: left; }
+  .alloc-right { min-width: 0; flex-wrap: wrap; }
 }
