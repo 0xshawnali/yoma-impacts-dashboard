@@ -1,0 +1,5 @@
+/* Cloudflare Pages _redirects — SPA fallback */
+/* All unmatched routes serve index.html (Portal uses hash or search params for state) */
+/*
+/domain/*  /index.html  200
+*/
