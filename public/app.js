@@ -114,45 +114,138 @@
       ],
     },
 
+    outcomes: {
+      lastUpdated: '20 Apr 2026',
+      totalIssued: 8768,
+      totalVerified: 8768,
+      certificates: [
+        {
+          type: 'Education Certificates',
+          icon: '🎓',
+          color: '#41204b',
+          colorLight: '#F4EDF7',
+          colorBorder: '#D8C8E8',
+          issued: 7748,
+          target: 4000000,
+          unit: 'certificates',
+          sdgs: ['SDG 4', 'SDG 8'],
+          verifier: 'Yoma / Passport to Earning (P2E)',
+          protocol: 'IXO Claims Protocol',
+          status: 'ON_TRACK',
+          description: 'Verified digital skills and curriculum completions issued via Yoma and P2E. Certificates are portable, blockchain-anchored credentials recognised by employers.',
+          breakdown: [
+            { label: 'Yoma SA — digital skills', value: 7748 },
+            { label: 'P2E certified (global pipeline)', value: 0 },
+            { label: 'Umuzi MSRC completions', value: 0 },
+          ],
+        },
+        {
+          type: 'Employment Outcomes',
+          icon: '💼',
+          color: '#4cade9',
+          colorLight: '#DFF1FC',
+          colorBorder: '#BFDBFE',
+          issued: 1020,
+          target: 500000,
+          unit: 'placements verified',
+          sdgs: ['SDG 8', 'SDG 10'],
+          verifier: 'Yoma SA / IXO Blocksync',
+          protocol: 'IXO Claims Protocol',
+          status: 'ON_TRACK',
+          description: 'Verified job and apprenticeship placements with blockchain-anchored proof of outcome. 54.4% female. Covers Yoma SA-reported placements and Solutions Engineers in active pathways.',
+          breakdown: [
+            { label: 'Job / apprenticeship placements (SA)', value: 1020 },
+            { label: 'Solutions engineers in pathway', value: 14 },
+            { label: 'Sustained 6-month placements', value: 0 },
+          ],
+        },
+        {
+          type: 'Carbon Credits',
+          icon: '🌿',
+          color: '#387f6a',
+          colorLight: '#DDF2EC',
+          colorBorder: '#BBF7D0',
+          issued: 0,
+          target: null,
+          unit: 'tonnes CO₂e verified',
+          sdgs: ['SDG 13', 'SDG 15'],
+          verifier: 'DUCT / Green Pill Cape Town / HOT',
+          protocol: 'IXO Impact Claims + Verra VCS',
+          status: null,
+          description: 'Verified carbon offsets generated through youth-led environmental monitoring, circular economy gigs, and participatory mapping. Credits to be issued upon verified claim completion in Q3–Q4 2026.',
+          breakdown: [
+            { label: 'Environmental monitoring gigs (DUCT)', value: 0 },
+            { label: 'Circular economy / Web3 (Green Pill)', value: 0 },
+            { label: 'Community mapping (HOT — Q3 target 1k youth)', value: 0 },
+          ],
+        },
+        {
+          type: 'Biodiversity Certificates',
+          icon: '🌳',
+          color: '#28a745',
+          colorLight: '#ECFDF5',
+          colorBorder: '#A7F3D0',
+          issued: 0,
+          target: null,
+          unit: 'certificates',
+          sdgs: ['SDG 15', 'SDG 13'],
+          verifier: 'Kruger 2 Canyons / GroundTruth (DPP2)',
+          protocol: 'IXO Impact Claims',
+          status: null,
+          description: 'Verified conservation and biodiversity impact from youth ranger programmes, habitat monitoring, and species tracking. Certificates will be issued through DPP2 partners onboarding Q3 2026.',
+          breakdown: [
+            { label: 'Kruger 2 Canyons — youth rangers', value: 0 },
+            { label: 'GroundTruth — citizen science', value: 0 },
+            { label: 'Amandla Safe Hubs — habitat activities', value: 0 },
+          ],
+        },
+      ],
+    },
+
     dpp2: [
       {
         name: 'Humanitarian OpenStreetMap Team (HOT)',
         focus: 'Community Mapping & Geospatial Data',
         target: 1000, quarter: 'Q3 2026', status: 'confirmed',
+        geography: 'National', region: 'Remote / Multi-province',
         note: 'Youth-led participatory mapping of impact zones and green infrastructure.',
       },
       {
         name: 'Kruger 2 Canyons Biosphere',
         focus: 'Environmental Conservation',
         target: null, quarter: 'Q3 2026', status: 'onboarding',
+        geography: 'Limpopo', region: 'Hoedspruit / Greater Kruger',
         note: 'Biodiversity monitoring and youth ranger programme.',
       },
       {
         name: 'GroundTruth',
         focus: 'Environmental Monitoring',
         target: null, quarter: 'Q3 2026', status: 'onboarding',
+        geography: 'Mpumalanga / National', region: 'Kruger Park buffer zones',
         note: 'Citizen science and environmental data collection.',
       },
       {
         name: 'Amandla Safe Hubs',
         focus: 'Youth Safety & Livelihoods',
         target: null, quarter: 'Q3 2026', status: 'onboarding',
+        geography: 'Gauteng', region: 'Johannesburg townships',
         note: 'Safe spaces and livelihood pathways for vulnerable youth.',
       },
       {
         name: 'Giga',
         focus: 'School Connectivity',
         target: null, quarter: 'Q3 2026', status: 'onboarding',
+        geography: 'National', region: 'Rural schools — multi-province',
         note: 'Connecting schools to the internet to enable digital opportunities.',
       },
     ],
 
     dpp1: [
-      { name: 'Hoedspruit Hub / PYEI', focus: 'Functional Numeracy',        range: '3,000–5,000', mid: 4000 },
-      { name: 'DUCT',                  focus: 'Environmental Monitoring',    range: '800–1,200',   mid: 1000 },
-      { name: 'Umuzi',                 focus: 'Digital Livelihoods (MSRC)',  range: '200–400',     mid: 300  },
-      { name: 'Green Pill Cape Town',  focus: 'Circular Economy / Web3',     range: '50–150',      mid: 100  },
-      { name: 'Shonaquip',             focus: 'Assistive Technology',        range: '50–150',      mid: 100  },
+      { name: 'Hoedspruit Hub / PYEI', focus: 'Functional Numeracy',        range: '3,000–5,000', mid: 4000, geography: 'Limpopo',       region: 'Hoedspruit / Tzaneen' },
+      { name: 'DUCT',                  focus: 'Environmental Monitoring',    range: '800–1,200',   mid: 1000, geography: 'Western Cape',   region: 'Cape Town' },
+      { name: 'Umuzi',                 focus: 'Digital Livelihoods (MSRC)',  range: '200–400',     mid: 300,  geography: 'Gauteng',        region: 'Johannesburg' },
+      { name: 'Green Pill Cape Town',  focus: 'Circular Economy / Web3',     range: '50–150',      mid: 100,  geography: 'Western Cape',   region: 'Cape Town' },
+      { name: 'Shonaquip',             focus: 'Assistive Technology',        range: '50–150',      mid: 100,  geography: 'Western Cape',   region: 'Cape Town' },
     ],
   };
 
@@ -493,6 +586,86 @@
       <div class="ms-card">${msRows}</div>`;
   }
 
+  function renderOutcomes() {
+    const o = MOCK.outcomes;
+
+    const summaryCards = `
+      <div class="kpi-grid">
+        <div class="kpi">
+          <div class="kpi-label">Total certificates issued</div>
+          <div class="kpi-value" style="color:#41204b">${o.totalIssued.toLocaleString()}</div>
+          <div class="kpi-meta"><span>all types · blockchain verified</span></div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Verification protocol</div>
+          <div class="kpi-value" style="color:#387f6a;font-size:14px;letter-spacing:0">IXO Claims</div>
+          <div class="kpi-meta"><span>anchored on IXO blockchain</span></div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Certificate types active</div>
+          <div class="kpi-value" style="color:#4cade9">2 <span style="font-size:13px;color:var(--text-mut)">/ 4</span></div>
+          <div class="kpi-meta"><span>carbon + biodiversity from Q3</span></div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Last updated</div>
+          <div class="kpi-value" style="color:#F9AB3E;font-size:14px">${o.lastUpdated}</div>
+          <div class="kpi-meta"><span>next update: Jun 2026</span></div>
+        </div>
+      </div>`;
+
+    const certCards = o.certificates.map(c => {
+      const p = c.target ? pct(c.issued, c.target) : null;
+      const bar = p !== null ? `<div class="outcome-bar"><div class="outcome-bar-fill" style="width:${p}%;background:${c.color}"></div></div>` : '';
+      const statusBadge = c.status ? `<span class="badge badge-${c.status.toLowerCase().replace('_','-')}">${c.status.replace('_',' ')}</span>` : `<span class="badge badge-at-risk">Pipeline Q3</span>`;
+      const sdgTags = c.sdgs.map(s => `<span class="sdg-tag" style="background:${c.colorLight};color:${c.color};border-color:${c.colorBorder}">${s}</span>`).join('');
+      const breakdownRows = c.breakdown.map(b => `
+        <div class="outcome-breakdown-row">
+          <span class="outcome-breakdown-label">${b.label}</span>
+          <span class="outcome-breakdown-value" style="color:${b.value > 0 ? c.color : 'var(--text-mut)'}">${b.value > 0 ? b.value.toLocaleString() : '—'}</span>
+        </div>`).join('');
+
+      return `
+        <div class="outcome-card" style="--oc-color:${c.color};--oc-light:${c.colorLight};--oc-border:${c.colorBorder}">
+          <div class="outcome-card-header">
+            <div class="outcome-icon" style="background:${c.colorLight};border-color:${c.colorBorder}">${c.icon}</div>
+            <div class="outcome-card-title-block">
+              <div class="outcome-type">${c.type}</div>
+              <div class="outcome-sdgs">${sdgTags}</div>
+            </div>
+            <div class="outcome-card-count">
+              <div class="outcome-issued" style="color:${c.color}">${c.issued.toLocaleString()}</div>
+              <div class="outcome-unit">${c.unit}</div>
+            </div>
+          </div>
+          ${bar}
+          ${p !== null ? `<div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-mut);margin-top:3px"><span>of ${c.target ? c.target.toLocaleString() : '—'} target</span><span style="color:${c.color};font-weight:700">${p}%</span></div>` : ''}
+          <p class="outcome-desc">${c.description}</p>
+          <div class="outcome-breakdown">${breakdownRows}</div>
+          <div class="outcome-card-footer">
+            <div class="outcome-meta-row">
+              <span class="outcome-meta-label">Verifier</span>
+              <span class="outcome-meta-value">${c.verifier}</span>
+            </div>
+            <div class="outcome-meta-row">
+              <span class="outcome-meta-label">Protocol</span>
+              <span class="outcome-meta-value" style="color:${c.color}">${c.protocol}</span>
+            </div>
+            <div style="margin-top:8px">${statusBadge}</div>
+          </div>
+        </div>`;
+    }).join('');
+
+    return `
+      <div class="info-box">
+        <strong>Verifiable outcome certificates — IXO Claims Protocol</strong><br>
+        All certificates are anchored on the IXO blockchain as verifiable credentials, providing tamper-proof proof of impact for funders and beneficiaries. Carbon and biodiversity certificates activate with DPP2 partners in Q3 2026.
+      </div>
+      ${secHead('Summary')}
+      ${summaryCards}
+      ${secHead('Certificate tracker')}
+      <div class="outcome-grid">${certCards}</div>`;
+  }
+
   function renderPlatformAnalytics() {
     const a = MOCK.yomaAnalytics;
     const fmtGrowth = g => `<span class="growth-up">↑ ${g % 1 === 0 ? g : g.toFixed(2)}%</span>`;
@@ -608,6 +781,7 @@
       contract: [
         { id: 'overview',   label: 'Executive overview'   },
         { id: 'trajectory', label: 'Target trajectory'    },
+        { id: 'outcomes',   label: 'Outcomes & certificates' },
         { id: 'analytics',  label: 'Platform analytics'   },
       ],
       funders: [
@@ -643,6 +817,7 @@
     if (_activeView === 'contract') {
       if (cur === 'overview')   bodyHtml = renderOverview(m, t);
       if (cur === 'trajectory') bodyHtml = renderTrajectory(MOCK);
+      if (cur === 'outcomes')   bodyHtml = renderOutcomes();
       if (cur === 'analytics')  { bodyHtml = renderPlatformAnalytics(); }
     } else if (_activeView === 'funders') {
       bodyHtml = renderFunder(cur);
@@ -651,11 +826,16 @@
         bodyHtml = `
           ${secHead('DPP1 active partners — Q2 2026')}
           <table class="data-table">
-            <thead><tr><th>Partner</th><th>Focus area</th><th>Range</th><th>Midpoint</th></tr></thead>
+            <thead><tr><th>Partner</th><th>Focus area</th><th>Province</th><th>Region / City</th><th>Range</th><th>Midpoint</th></tr></thead>
             <tbody>${MOCK.dpp1.map(p => `
-              <tr><td class="bold">${p.name}</td><td>${p.focus}</td>
-              <td style="font-family:monospace">${p.range}</td>
-              <td style="font-family:monospace;font-weight:700">${p.mid.toLocaleString()}</td></tr>`).join('')}
+              <tr>
+                <td class="bold">${p.name}</td>
+                <td>${p.focus}</td>
+                <td><span class="geo-badge">${p.geography}</span></td>
+                <td class="muted">${p.region}</td>
+                <td style="font-family:monospace">${p.range}</td>
+                <td style="font-family:monospace;font-weight:700">${p.mid.toLocaleString()}</td>
+              </tr>`).join('')}
             </tbody>
           </table>`;
       }
@@ -665,16 +845,18 @@
         bodyHtml = `
           ${secHead('DPP2 design partners — Q3 2026 expansion')}
           <table class="data-table">
-            <thead><tr><th>Partner</th><th>Focus area</th><th>Youth target</th><th>Quarter</th><th>Status</th></tr></thead>
+            <thead><tr><th>Partner</th><th>Focus area</th><th>Province</th><th>Region</th><th>Youth target</th><th>Quarter</th><th>Status</th></tr></thead>
             <tbody>${MOCK.dpp2.map(p => `
               <tr>
                 <td class="bold">${p.name}</td>
                 <td>${p.focus}</td>
+                <td><span class="geo-badge">${p.geography}</span></td>
+                <td class="muted">${p.region}</td>
                 <td style="font-family:monospace;font-weight:700;color:${p.target ? '#41204b' : '#9B8FAA'}">${p.target ? p.target.toLocaleString() : '—'}</td>
                 <td style="font-size:11px;color:var(--text-sec)">${p.quarter}</td>
                 <td><span class="badge badge-${statusClass[p.status]}">${statusLabel[p.status]}</span></td>
               </tr>
-              <tr><td colspan="5" style="font-size:11px;color:var(--text-sec);padding:4px 13px 10px;border-bottom:1px solid var(--border)">${p.note}</td></tr>
+              <tr><td colspan="7" style="font-size:11px;color:var(--text-sec);padding:4px 13px 10px;border-bottom:1px solid var(--border)">${p.note}</td></tr>
             `).join('')}
             </tbody>
           </table>
