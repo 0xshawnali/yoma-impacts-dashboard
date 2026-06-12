@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoma Impacts Dashboard</title>
+
+  <!--
+    Content-Security-Policy:
+    - script-src 'self' only — no inline eval, no CDN scripts loaded at runtime.
+    - style-src 'self' 'unsafe-inline' — inline styles used by the dashboard.
+    - frame-ancestors restricts embedding to Portal origins only.
+    - No third-party cookie dependency (sandbox: allow-same-origin is enough).
+  -->
+  <meta http-equiv="Content-Security-Policy"
+    content="
+      default-src 'self';
+      script-src 'self';
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      font-src 'self' https://fonts.gstatic.com;
+      img-src 'self' data:;
+      connect-src 'self' https://blocksync-graphql.ixo.earth https://rpc.ixo.earth;
+      frame-ancestors https://portal.ixo.world https://dpp.ixo.world;
+    ">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Portal context banner — populated by portal-bridge.js INIT event -->
+  <div id="portal-context-banner" class="portal-banner" hidden>
+    <span class="portal-banner-dot"></span>
+    <span id="portal-context-label">Connected to IXO Portal</span>
+    <span id="portal-entity-did" class="portal-banner-did"></span>
+  </div>
+
+  <!-- App shell — dashboard content injected here by app.js -->
+  <div id="app-root"></div>
+
+  <!-- Portal bridge MUST load and send READY before app.js runs -->
+  <script src="portal-bridge.js"></script>
+  <script src="geo-map.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

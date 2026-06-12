@@ -1,0 +1,39 @@
+/*
+  Cloudflare Pages _headers
+  Sets security headers for all routes.
+  frame-ancestors restricts embedding to IXO Portal origins only.
+*/
+
+/*
+  All routes
+*/
+https://:project.pages.dev/*
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+/*
+  Static assets — cache aggressively
+*/
+https://:project.pages.dev/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+https://:project.pages.dev/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*
+  HTML entry point — CSP + frame-ancestors
+  Update frame-ancestors when you know the exact Portal origins.
+*/
+https://:project.pages.dev/index.html
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://blocksync-graphql.ixo.earth https://rpc.ixo.earth; frame-ancestors https://portal.ixo.world https://dpp.ixo.world;
+  Cache-Control: no-store
+
+/*
+  manifest.json — always fresh, allow cross-origin reads by Portal
+*/
+https://:project.pages.dev/manifest.json
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: no-cache

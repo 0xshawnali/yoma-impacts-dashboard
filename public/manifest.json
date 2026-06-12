@@ -1,0 +1,37 @@
+{
+  "id": "yoma-impacts-dashboard",
+  "version": "1.0.0",
+  "name": "Yoma Impacts Dashboard",
+  "description": "Multi-funder reporting dashboard for the Yoma Impacts Exchange — UNICEF contract monitoring, claim verification pipeline, and impact certificate audit trail.",
+  "author": "IXO World AG",
+  "origin": "https://yoma-impacts-dashboard.pages.dev",
+  "iframe": {
+    "url": "https://yoma-impacts-dashboard.pages.dev/index.html",
+    "allowedOrigins": [
+      "https://portal.ixo.world",
+      "https://dpp.ixo.world"
+    ],
+    "sandbox": [
+      "allow-scripts",
+      "allow-same-origin",
+      "allow-forms",
+      "allow-popups-to-escape-sandbox"
+    ]
+  },
+  "linkedResource": {
+    "type": "PortalApp",
+    "mediaType": "application/json",
+    "serviceEndpoint": "https://yoma-impacts-dashboard.pages.dev/manifest.json"
+  },
+  "features": [
+    "entityContext",
+    "walletContext",
+    "domainContext"
+  ],
+  "permissions": [],
+  "icon": "https://yoma-impacts-dashboard.pages.dev/icon.svg",
+  "category": "reporting",
+  "tags": ["impacts", "reporting", "UNICEF", "verification", "claims"],
+  "protocol": "ixo.portal.iframe.v1",
+  "protocolVersion": "1.0"
+}
