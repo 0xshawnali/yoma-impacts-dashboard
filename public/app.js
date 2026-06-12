@@ -249,6 +249,266 @@
     ],
   };
 
+  // ── Methodology library (5 deed outcome units) ───────────────────────────
+
+  const METHODOLOGY_LIBRARY = [
+    {
+      id: 'LLPA',
+      name: 'Launch Lab Participant Activation',
+      partner: 'Umuzi',
+      domain: 'Employment & Livelihoods',
+      color: '#41204b', colorLight: '#F4EDF7', colorBorder: '#D8C8E8',
+      confidenceTier: 'A',
+      oracle: 'Umuzi Launch Lab Sustained Employment Oracle v1.0',
+      oracleVersion: '1.0',
+      scenariosPassed: '12/12',
+      description: 'Verified sustained employment: two-stage claim chain — work placement confirmed + sustained-outcome (months ≥ threshold, payslip reviewed). High-stakes gate at collection 38101.',
+      crosswalks: [
+        { registry: 'IRIS+', code: 'OI5368', label: 'Employees: Receiving Living Wage', alignment: 'direct' },
+        { registry: 'IRIS+', code: 'OI7708', label: 'Jobs Created and Supported', alignment: 'direct' },
+        { registry: 'SDG',   code: '8.5.1',  label: 'Average hourly earnings — youth', alignment: 'direct' },
+        { registry: 'SDG',   code: '8.5.2',  label: 'Unemployment rate — youth', alignment: 'proxy' },
+        { registry: 'ILO',   code: 'DW-7',   label: 'Youth employment-to-population ratio', alignment: 'proxy' },
+        { registry: 'SIB',   code: 'SIB-EMPLOY-ZA', label: 'Sustained employment outcome (SA DEL)', alignment: 'direct' },
+        { registry: 'Gold Standard', code: 'GS-SDL', label: 'Sustainable Livelihoods', alignment: 'partial' },
+      ],
+      livelihoods: { avgMonths: 7.4, threshold: 6, monthlyEarningsZAR: 4413, sroiLow: 2.8, sroiHigh: 4.2 },
+      funders: ['pwc', 'canada', 'dbsa', 'unicef'],
+    },
+    {
+      id: 'CSH',
+      name: 'Catchment Stewardship Hectare-Month',
+      partner: 'DUCT',
+      domain: 'Environmental Monitoring',
+      color: '#387f6a', colorLight: '#DDF2EC', colorBorder: '#BBF7D0',
+      confidenceTier: 'B',
+      oracle: 'DUCT Catchment Stewardship Oracle v1.0-draft',
+      oracleVersion: '1.0-draft',
+      scenariosPassed: 'In development',
+      description: 'Verified citizen science biodiversity monitoring: miniSASS bioassessment score + geolocation + photo evidence. Youth river monitors generating ecosystem health data for catchment areas.',
+      crosswalks: [
+        { registry: 'SDG',   code: '15.1.2', label: 'Proportion of land under biodiversity-friendly management', alignment: 'proxy' },
+        { registry: 'SDG',   code: '6.3.2',  label: 'Proportion of water bodies with good ambient water quality', alignment: 'direct' },
+        { registry: 'IRIS+', code: 'PI2571', label: 'Area of Land Sustainably Managed', alignment: 'partial' },
+        { registry: 'Verra', code: 'VCS+CCB','label': 'Watershed & Biodiversity Co-benefits', alignment: 'partial' },
+        { registry: 'BCA',   code: 'BCA-HABITAT', label: 'Biodiversity Credit Alliance — Habitat Unit', alignment: 'emerging' },
+        { registry: 'SEEA',  code: 'SEEA-EW', label: 'Ecosystem Services Accounting — Water Regulation', alignment: 'partial' },
+      ],
+      livelihoods: null,
+      funders: ['canada', 'dbsa'],
+    },
+    {
+      id: 'VGG',
+      name: 'Verified Grade-Level Gain',
+      partner: 'Greater Stellenbosch Trust / numiknow',
+      domain: 'Education & Foundational Skills',
+      color: '#4cade9', colorLight: '#DFF1FC', colorBorder: '#BFDBFE',
+      confidenceTier: 'A',
+      oracle: 'numiknow Foundational Numeracy Oracle v1.0-draft',
+      oracleVersion: '1.0-draft',
+      scenariosPassed: 'In development',
+      description: 'Verified grade-level advancement in foundational numeracy: baseline assessment + endline assessment with verified delta ≥ 1 grade level. Tamper-proof pre/post design.',
+      crosswalks: [
+        { registry: 'SDG',   code: '4.1.1',  label: 'Children achieving minimum proficiency in reading/maths', alignment: 'direct' },
+        { registry: 'SDG',   code: '4.6.1',  label: 'Proportion with fixed level of proficiency in literacy/numeracy', alignment: 'proxy' },
+        { registry: 'IRIS+', code: 'OD7459', label: 'Students completing education programmes', alignment: 'direct' },
+        { registry: 'IRIS+', code: 'OD7460', label: 'Students: Grade-level advancement', alignment: 'direct' },
+        { registry: 'WB HCI', code: 'HCI-LQ', label: 'Human Capital Index — Learning-adjusted years of school', alignment: 'partial' },
+        { registry: 'SIVI',  code: 'SROI-EDU-ZA', label: 'SROI proxy — foundational numeracy gain (SA)', alignment: 'partial' },
+      ],
+      livelihoods: null,
+      funders: ['pwc', 'canada', 'unicef'],
+    },
+    {
+      id: 'VDU',
+      name: 'Verified Dignity Unit',
+      partner: 'GreenPill Cape Town — Dignity Project',
+      domain: 'Circular Economy & Youth Livelihoods',
+      color: '#28a745', colorLight: '#ECFDF5', colorBorder: '#A7F3D0',
+      confidenceTier: 'B',
+      oracle: 'Dignity Project Composite Oracle v1.0-draft',
+      oracleVersion: '1.0-draft',
+      scenariosPassed: 'In development',
+      description: 'Composite outcome unit: verified waste diversion (weight sorted, material type) + verified youth livelihood activity (prepaid card payout). Disaggregated environmental + social sub-credits.',
+      crosswalks: [
+        { registry: 'SDG',   code: '12.5.1', label: 'National recycling rate (material recovered)', alignment: 'proxy' },
+        { registry: 'SDG',   code: '8.3.1',  label: 'Proportion of informal employment in non-agriculture', alignment: 'proxy' },
+        { registry: 'Verra', code: 'VM0044', label: 'Waste diversion from landfill — GHG avoidance', alignment: 'partial' },
+        { registry: 'IRIS+', code: 'OI5368', label: 'Employees: Receiving Living Wage', alignment: 'partial' },
+        { registry: 'ILO',   code: 'ILO-WASTE', label: 'Decent work in waste & recycling sector', alignment: 'proxy' },
+      ],
+      livelihoods: null,
+      funders: ['canada', 'dbsa'],
+    },
+    {
+      id: 'VISU',
+      name: 'Verified Inclusion Story Unit',
+      partner: 'ShonaquipSE',
+      domain: 'Disability Inclusion & Social Norm Change',
+      color: '#7C3AED', colorLight: '#F5F3FF', colorBorder: '#DDD6FE',
+      confidenceTier: 'C',
+      oracle: 'ShonaquipSE Inclusion Story Oracle v1.0-draft (novel)',
+      oracleVersion: '1.0-draft',
+      scenariosPassed: 'In development',
+      description: 'Novel outcome unit: verified disability inclusion story produced with informed consent, participant co-creation, and engagement evidence. First-of-kind methodology — expert evaluator panel required.',
+      crosswalks: [
+        { registry: 'SDG',   code: '10.2.1', label: 'People living below 50% of median income, by disability', alignment: 'proxy' },
+        { registry: 'CRPD',  code: 'Art. 8', label: 'Awareness-raising obligations — disability rights', alignment: 'direct' },
+        { registry: 'IRIS+', code: 'OI5597', label: 'Clients with Disabilities', alignment: 'partial' },
+        { registry: 'SIVI',  code: 'SROI-SOCIAL-NORM', label: 'Social norm change — disability inclusion (novel)', alignment: 'emerging' },
+      ],
+      livelihoods: null,
+      funders: ['canada', 'unicef'],
+    },
+  ];
+
+  // Returns crosswalk tags HTML for a given funder perspective
+  function methodologyCrosswalks(unit, highlightRegistries) {
+    const alignColor = { direct: '#1a4d2e', proxy: '#5a8a6a', partial: '#8aaa8a', emerging: '#D97706' };
+    const alignBg    = { direct: '#e8f4e8', proxy: '#f0f6f0', partial: '#f5f9f5', emerging: '#FFF7ED' };
+    return unit.crosswalks
+      .filter(c => !highlightRegistries || highlightRegistries.some(r => c.registry.includes(r)))
+      .map(c => `<span class="meth-tag" style="background:${alignBg[c.alignment]};color:${alignColor[c.alignment]};border:1px solid ${alignColor[c.alignment]}40">
+        <span class="meth-tag-reg">${c.registry}</span> ${c.code} — ${c.label}
+      </span>`).join('');
+  }
+
+  function renderMethodologyCard(unit, compact) {
+    const tierColor = { A: '#1a4d2e', B: '#D97706', C: '#7C3AED' };
+    const tierLabel = { A: 'Established', B: 'Emerging', C: 'Novel' };
+    const crosswalkHtml = unit.crosswalks.map(c => {
+      const alignColor = { direct: '#1a4d2e', proxy: '#5a8a6a', partial: '#8aaa8a', emerging: '#D97706' };
+      const alignBg    = { direct: '#e8f4e8', proxy: '#f0f6f0', partial: '#f5f9f5', emerging: '#FFF7ED' };
+      return `<tr>
+        <td style="font-size:10px;color:#888;padding:3px 8px;white-space:nowrap">${c.registry}</td>
+        <td style="font-size:10px;font-family:monospace;font-weight:700;color:#333;padding:3px 8px;white-space:nowrap">${c.code}</td>
+        <td style="font-size:10px;color:#444;padding:3px 8px">${c.label}</td>
+        <td style="padding:3px 8px"><span style="font-size:9px;font-weight:700;padding:2px 6px;border-radius:2px;background:${alignBg[c.alignment]};color:${alignColor[c.alignment]}">${c.alignment}</span></td>
+      </tr>`;
+    }).join('');
+
+    const liveSection = unit.livelihoods ? `
+      <div class="meth-live-strip" style="background:#f0f6f0;border:1px solid #c5d8c5;border-radius:4px;padding:8px 12px;margin-top:10px;display:flex;gap:24px;flex-wrap:wrap">
+        <div><div style="font-size:18px;font-weight:700;color:#1a4d2e">ZAR ${(unit.livelihoods.monthlyEarningsZAR * 300 * unit.livelihoods.avgMonths / 1000000).toFixed(1)}M</div><div style="font-size:10px;color:#5a8a6a;text-transform:uppercase;letter-spacing:0.5px">Est. income (300 LLPA)</div></div>
+        <div><div style="font-size:18px;font-weight:700;color:#1a4d2e">${unit.livelihoods.avgMonths} mo.</div><div style="font-size:10px;color:#5a8a6a;text-transform:uppercase;letter-spacing:0.5px">Avg sustained duration</div></div>
+        <div><div style="font-size:18px;font-weight:700;color:#1a4d2e">${unit.livelihoods.sroiLow}×–${unit.livelihoods.sroiHigh}×</div><div style="font-size:10px;color:#5a8a6a;text-transform:uppercase;letter-spacing:0.5px">SROI range (SA HCI basis)</div></div>
+      </div>` : '';
+
+    return `
+      <div class="meth-card" style="border:1px solid ${unit.colorBorder};background:${unit.colorLight};border-radius:6px;padding:${compact ? '12px' : '16px'};margin-bottom:${compact ? '10px' : '16px'}">
+        <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:8px">
+          <div style="background:${unit.color};color:white;font-size:11px;font-weight:700;padding:4px 9px;border-radius:3px;white-space:nowrap;letter-spacing:0.5px">${unit.id}</div>
+          <div style="flex:1">
+            <div style="font-size:${compact ? '13' : '14'}px;font-weight:700;color:#1a1a2e">${unit.name}</div>
+            <div style="font-size:11px;color:#666;margin-top:1px">${unit.partner} · ${unit.domain}</div>
+          </div>
+          <div style="text-align:right">
+            <span style="font-size:10px;font-weight:700;padding:3px 8px;border-radius:2px;background:${tierColor[unit.confidenceTier]}20;color:${tierColor[unit.confidenceTier]};border:1px solid ${tierColor[unit.confidenceTier]}40">Tier ${unit.confidenceTier} — ${tierLabel[unit.confidenceTier]}</span>
+            <div style="font-size:9px;color:#888;margin-top:3px">${unit.oracle}</div>
+          </div>
+        </div>
+        <p style="font-size:11px;color:#555;line-height:1.5;margin-bottom:10px">${unit.description}</p>
+        ${compact ? '' : `
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:#888;margin-bottom:4px">Methodology crosswalks</div>
+        <table style="width:100%;border-collapse:collapse;background:white;border-radius:3px;overflow:hidden;border:1px solid ${unit.colorBorder}">${crosswalkHtml}</table>`}
+        ${liveSection}
+      </div>`;
+  }
+
+  function renderMethodologyTab() {
+    const tierSummary = `
+      <div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap">
+        <div class="kpi" style="min-width:120px"><div class="kpi-label">Tier A oracles</div><div class="kpi-value" style="color:#1a4d2e">1</div><div class="kpi-meta"><span>LLPA — established</span></div></div>
+        <div class="kpi" style="min-width:120px"><div class="kpi-label">Tier B oracles</div><div class="kpi-value" style="color:#D97706">3</div><div class="kpi-meta"><span>CSH · VDU · VGG — emerging</span></div></div>
+        <div class="kpi" style="min-width:120px"><div class="kpi-label">Tier C oracles</div><div class="kpi-value" style="color:#7C3AED">1</div><div class="kpi-meta"><span>VISU — novel, first-of-kind</span></div></div>
+        <div class="kpi" style="min-width:120px"><div class="kpi-label">Intl. crosswalks</div><div class="kpi-value" style="color:#4cade9">25</div><div class="kpi-meta"><span>IRIS+ · SDG · ILO · SIB · Verra</span></div></div>
+        <div class="kpi" style="min-width:120px"><div class="kpi-label">Issuer</div><div class="kpi-value" style="font-size:13px;color:#41204b">Co-op</div><div class="kpi-meta"><span>Yoma Venture Co-operative</span></div></div>
+      </div>`;
+
+    return `
+      <div class="info-box">
+        <strong>Yoma Impacts Methodology Library — Outcome Unit Registry</strong><br>
+        Five deed outcome units, each mapped to established international impact accounting frameworks. Oracle confidence tiers: <strong>A</strong> = established methodology (ready for outcomes financing) · <strong>B</strong> = emerging (parameterised, assumptions explicit) · <strong>C</strong> = novel (expert evaluator panel required). All outcome assets issued by the <strong>Yoma Venture Co-operative</strong> on IXO World infrastructure.
+      </div>
+      ${secHead('Oracle confidence summary')}
+      ${tierSummary}
+      ${secHead('Outcome unit registry')}
+      ${METHODOLOGY_LIBRARY.map(u => renderMethodologyCard(u, false)).join('')}`;
+  }
+
+  // ── Per-funder methodology relevance panel ────────────────────────────────
+
+  function renderFunderMethodologyPanel(funderId, funderColor) {
+    const relevance = {
+      pwc: {
+        headline: 'Why methodology alignment matters for PwC',
+        narrative: 'PwC\'s ESG and social value reporting frameworks require standardised, auditable impact units. The IRIS+ crosswalks allow Yoma outcome data to be directly embedded in PwC sustainability reports. The SROI range (2.8×–4.2×) provides a defensible social return figure for board-level reporting and private sector partnership pitches.',
+        highlight: ['LLPA', 'VGG'],
+        registries: ['IRIS+', 'SROI'],
+        callouts: [
+          { label: 'SROI range', value: '2.8×–4.2×', sub: 'ZAR per ZAR invested (SA HCI basis)' },
+          { label: 'IRIS+ codes', value: '4', sub: 'directly aligned (OI5368, OI7708, OD7459, OD7460)' },
+          { label: 'SDG alignment', value: 'SDG 4 + 8', sub: 'skills & employment reporting' },
+        ],
+      },
+      canada: {
+        headline: 'Why methodology alignment matters for Canada (GAC)',
+        narrative: 'GAC\'s Results-Based Management (RBM) framework and Development for Results reporting require direct SDG indicator mapping and gender-disaggregated outcome data. The Yoma methodology library provides SDG 4.1.1, 8.5.1, 8.5.2, 10.2, 12.5, 13, and 15 crosswalks — covering the full range of GAC programme streams (digital livelihoods, Green Rising, P2E).',
+        highlight: ['LLPA', 'VGG', 'CSH', 'VDU', 'VISU'],
+        registries: ['SDG', 'ILO'],
+        callouts: [
+          { label: 'SDG indicators', value: '9', sub: 'covered across 5 outcome units' },
+          { label: 'Gender data', value: '54.4%', sub: 'female LLPA · target 60%' },
+          { label: 'Green outcomes', value: 'CSH + VDU', sub: 'SDG 12/13/15 aligned' },
+        ],
+      },
+      dbsa: {
+        headline: 'Why methodology alignment matters for DBSA',
+        narrative: 'Development finance institutions require investment-grade, bankable impact data. LLPA\'s direct alignment with SA DEL\'s sustained employment outcome metric (SIB-EMPLOY-ZA) makes it immediately compatible with Social Impact Bond structures. The confidence score (0.92), audit trail, and IXO verifiable credential infrastructure provide the due diligence trail DFIs require. SROI of 2.8×–4.2× provides a social return premium on top of financial return.',
+        highlight: ['LLPA', 'VDU', 'CSH'],
+        registries: ['SIB', 'IRIS+', 'Verra'],
+        callouts: [
+          { label: 'Confidence score', value: '0.92', sub: 'LLPA · threshold 0.85 · 12/12 scenarios' },
+          { label: 'SIB-compatible', value: 'Yes', sub: 'SIB-EMPLOY-ZA direct alignment' },
+          { label: 'Implied income', value: 'ZAR 9.8M', sub: '300 LLPA × 7.4 months × NMW' },
+        ],
+      },
+      unicef: {
+        headline: 'Why methodology alignment matters for UNICEF',
+        narrative: 'UNICEF\'s programming accountability framework maps outcomes to CRC articles, SDG targets, and MICS indicators. The Yoma methodology library covers SDG 4 (education — VGG), SDG 8 (employment — LLPA), SDG 10 (inclusion — VISU), and SDG 12/13/15 (environment — CSH/VDU). VISU\'s CRPD Article 8 alignment is directly relevant to UNICEF\'s disability inclusion mandate. All outcome units are youth-specific (14–35 age cohort, SA).',
+        highlight: ['LLPA', 'VGG', 'VISU'],
+        registries: ['SDG', 'CRPD', 'IRIS+'],
+        callouts: [
+          { label: 'SDG targets covered', value: '9', sub: 'across SDG 4, 8, 10, 12, 13, 15' },
+          { label: 'CRPD alignment', value: 'Art. 8', sub: 'VISU — disability inclusion' },
+          { label: 'Youth cohort', value: '14–35', sub: 'South Africa programme focus' },
+        ],
+      },
+    };
+
+    const r = relevance[funderId];
+    if (!r) return '';
+
+    const relevantUnits = METHODOLOGY_LIBRARY.filter(u => r.highlight.includes(u.id));
+
+    const calloutHtml = r.callouts.map(c => `
+      <div class="kpi" style="min-width:130px">
+        <div class="kpi-label">${c.label}</div>
+        <div class="kpi-value" style="color:${funderColor};font-size:16px">${c.value}</div>
+        <div class="kpi-meta"><span>${c.sub}</span></div>
+      </div>`).join('');
+
+    return `
+      <div style="background:#f8f9fa;border:1px solid #e5e7eb;border-left:4px solid ${funderColor};border-radius:6px;padding:16px;margin-bottom:20px">
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.7px;color:${funderColor};margin-bottom:6px">Methodology alignment</div>
+        <div style="font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:6px">${r.headline}</div>
+        <p style="font-size:12px;color:#555;line-height:1.6;margin-bottom:12px">${r.narrative}</p>
+        <div class="kpi-grid" style="margin-bottom:12px">${calloutHtml}</div>
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:#888;margin-bottom:8px">Relevant outcome units for this funder</div>
+        ${relevantUnits.map(u => renderMethodologyCard(u, true)).join('')}
+      </div>`;
+  }
+
   // ── Funder data ───────────────────────────────────────────────────────────
 
   const FUNDERS = {
@@ -336,6 +596,78 @@
         { label: 'Gender-disaggregated results submitted to GAC',      due: 'Jun 2026', status: 'in-progress' },
         { label: 'Year 2 digital initiatives reporting cycle opens',   due: 'Jan 2026', status: 'upcoming'    },
         { label: '500k placements global target (Yoma/1MiO/YouthHub)', due: 'Dec 2026', status: 'upcoming'    },
+      ],
+    },
+
+    dbsa: {
+      name: 'DBSA',
+      fullName: 'Development Bank of Southern Africa',
+      color: '#005792',
+      colorLight: '#EFF6FF',
+      colorBorder: '#93C5FD',
+      mandate: 'Blended finance · Social Impact Bonds · Youth employment outcomes',
+      contribution: 'TBC',
+      period: 'Prospective 2026–2028',
+      focus: ['Investment-grade outcome units', 'SIB-compatible metrics', 'Blended finance structuring', 'SROI documentation', 'Youth employment (SA)'],
+      narrative: 'DBSA\'s mandate as South Africa\'s development finance institution includes structuring blended finance instruments that mobilise private capital for social outcomes. The Yoma Impacts Exchange offers DBSA a pipeline of investment-grade, independently verified youth employment outcome units (LLPA) that are directly compatible with SA DEL\'s sustained employment outcome metric used in Social Impact Bonds. Each LLPA is backed by a two-stage verified claim chain, a confidence score of 0.92, W3C verifiable credentials, and a complete IXO blockchain audit trail — meeting DFI due diligence standards. The SROI range of 2.8×–4.2× (SA Human Capital Index basis) provides a social premium on top of financial return for blended structures.',
+      allocation: [
+        { label: 'SIB outcome payments — LLPA (sustained employment)', pct: 55, amount: 'TBC' },
+        { label: 'Blended finance facility — DPP1+DPP2 scale',         pct: 25, amount: 'TBC' },
+        { label: 'Environmental outcome units (CSH + VDU)',              pct: 12, amount: 'TBC' },
+        { label: 'Technical assistance — oracle governance',             pct:  8, amount: 'TBC' },
+      ],
+      kpis: [
+        { label: 'LLPA outcome units (verified)', value: 0,    target: 300,   color: '#41204b', sub: 'SIB-EMPLOY-ZA compatible',       status: 'AT_RISK'  },
+        { label: 'SROI range (per LLPA)',          value: 0,    target: null,  color: '#005792', sub: '2.8×–4.2× ZAR/ZAR (target)',     status: null       },
+        { label: 'Confidence score (oracle)',       value: 0,   target: null,  color: '#1a4d2e', sub: '0.92 threshold 0.85 (LLPA v1)',   status: null       },
+        { label: 'CSH units (environmental)',       value: 0,   target: null,  color: '#387f6a', sub: 'Verra VCS+CCB compatible',        status: 'AT_RISK'  },
+        { label: 'VDU units (circular economy)',    value: 0,   target: null,  color: '#28a745', sub: 'Waste + livelihoods composite',   status: 'AT_RISK'  },
+        { label: 'Audit trail completeness',        value: 0,   target: null,  color: '#0891B2', sub: 'W3C VC + IXO blockchain',         status: null       },
+      ],
+      milestones: [
+        { label: 'DBSA introductory briefing — Yoma methodology library',  due: 'Jun 2026',  status: 'in-progress' },
+        { label: 'LLPA oracle v1.0 independent review (12/12 scenarios)',  due: 'Jun 2026',  status: 'complete'    },
+        { label: 'DBSA due diligence package prepared',                     due: 'Jul 2026',  status: 'upcoming'    },
+        { label: 'SIB structuring workshop — SA DEL / DBSA / Yoma Co-op',  due: 'Aug 2026',  status: 'upcoming'    },
+        { label: 'First LLPA batch certificate issued (300 units)',         due: 'Dec 2026',  status: 'upcoming'    },
+        { label: 'Environmental oracle (CSH) v1.0 — DBSA review',          due: 'Q1 2027',   status: 'upcoming'    },
+        { label: 'Blended finance term sheet — pilot instrument',           due: 'Q2 2027',   status: 'upcoming'    },
+      ],
+    },
+
+    unicef: {
+      name: 'UNICEF',
+      fullName: 'UNICEF — United Nations Children\'s Fund',
+      color: '#1CABE2',
+      colorLight: '#E8F7FD',
+      colorBorder: '#7DD3F8',
+      mandate: 'Youth outcomes · SDG 4/8/10 · Disability inclusion · Green Rising',
+      contribution: 'Programme co-funding',
+      period: '2025–2027',
+      focus: ['SDG 4 education (VGG)', 'SDG 8 employment (LLPA)', 'SDG 10 inclusion (VISU)', 'Green Rising (CSH + VDU)', 'Country-level disaggregation'],
+      narrative: 'UNICEF\'s programme accountability framework requires outcome reporting against CRC articles, SDG targets, and MICS indicators. The Yoma Methodology Library provides direct crosswalks to SDG 4.1.1 (grade-level gain — VGG), SDG 8.5.1 and 8.5.2 (youth employment — LLPA), SDG 10.2 (inclusion — VISU), and SDG 12.5/13/15 (environment — CSH/VDU). VISU\'s alignment with CRPD Article 8 is directly relevant to UNICEF\'s disability inclusion programming. All outcome units apply to the 14–35 youth cohort in South Africa, with architecture designed to scale to other UNICEF country offices. The co-operative issuer structure and IXO W3C verifiable credentials meet UNICEF\'s data sovereignty and portability requirements.',
+      allocation: [
+        { label: 'SDG 4 — education outcomes (VGG / numiknow)',       pct: 30, amount: 'Programme allocation' },
+        { label: 'SDG 8 — employment outcomes (LLPA / Umuzi)',        pct: 30, amount: 'Programme allocation' },
+        { label: 'SDG 10 — inclusion outcomes (VISU / ShonaquipSE)',  pct: 20, amount: 'Programme allocation' },
+        { label: 'Green Rising — environment (CSH + VDU)',            pct: 20, amount: 'Programme allocation' },
+      ],
+      kpis: [
+        { label: 'SDG 4.1.1 — grade-level gains (VGG)', value: 0,  target: null, color: '#4cade9', sub: 'Foundational numeracy verified',       status: 'AT_RISK'  },
+        { label: 'SDG 8.5 — sustained employment (LLPA)',value: 0,  target: 300,  color: '#41204b', sub: '14–35 cohort · South Africa',          status: 'AT_RISK'  },
+        { label: 'SDG 10.2 — inclusion stories (VISU)',  value: 0,  target: null, color: '#7C3AED', sub: 'CRPD Art. 8 · disability inclusion',   status: 'AT_RISK'  },
+        { label: 'SDG 12/15 — environmental (CSH+VDU)',  value: 0,  target: null, color: '#387f6a', sub: 'Biodiversity + circular economy',       status: 'AT_RISK'  },
+        { label: 'Yoma SA active users',                  value: 74854, target: null, color: '#1CABE2', sub: '↑ 250.67% · Jan 2025–Jun 2026',    status: 'ON_TRACK' },
+        { label: 'Female beneficiaries (LLPA)',           value: 0,  target: null, color: '#D04A02', sub: 'Target 54.4%+ · gender parity focus', status: null       },
+      ],
+      milestones: [
+        { label: 'Yoma SA platform baseline — 74,854 users',             due: 'Jun 2026',  status: 'complete'    },
+        { label: 'LLPA oracle v1.0 verified (12/12 scenarios)',           due: 'Jun 2026',  status: 'complete'    },
+        { label: 'VGG oracle draft — numiknow assessment framework',      due: 'Jul 2026',  status: 'in-progress' },
+        { label: 'VISU oracle draft — ShonaquipSE + disability experts',  due: 'Aug 2026',  status: 'upcoming'    },
+        { label: 'First SDG 4.1.1 batch credentials issued (VGG)',        due: 'Q3 2026',   status: 'upcoming'    },
+        { label: 'UNICEF country office scalability assessment',           due: 'Q4 2026',   status: 'upcoming'    },
+        { label: 'Multi-country pilot design — 2 UNICEF country offices', due: 'Q1 2027',   status: 'upcoming'    },
       ],
     },
 
@@ -552,6 +884,7 @@
       </div>` : '';
 
     return `
+      ${renderFunderMethodologyPanel(funderId, f.color)}
       <div class="funder-header" style="--funder-color:${f.color};--funder-light:${f.colorLight};--funder-border:${f.colorBorder}">
         <div class="funder-header-top">
           <div class="funder-logo-chip" style="background:${f.color}">${f.name[0]}</div>
@@ -779,14 +1112,17 @@
   function renderSubNav(view) {
     const subs = {
       contract: [
-        { id: 'overview',   label: 'Executive overview'   },
-        { id: 'trajectory', label: 'Target trajectory'    },
-        { id: 'outcomes',   label: 'Outcomes & certificates' },
-        { id: 'analytics',  label: 'Platform analytics'   },
+        { id: 'overview',    label: 'Executive overview'      },
+        { id: 'trajectory',  label: 'Target trajectory'       },
+        { id: 'outcomes',    label: 'Outcomes & certificates' },
+        { id: 'methodology', label: 'Methodology library'     },
+        { id: 'analytics',   label: 'Platform analytics'      },
       ],
       funders: [
         { id: 'pwc',       label: 'PwC'       },
         { id: 'canada',    label: 'Canada'    },
+        { id: 'dbsa',      label: 'DBSA'      },
+        { id: 'unicef',    label: 'UNICEF'    },
         { id: 'capgemini', label: 'Capgemini' },
       ],
       orgs: [
@@ -817,7 +1153,8 @@
     if (_activeView === 'contract') {
       if (cur === 'overview')   bodyHtml = renderOverview(m, t);
       if (cur === 'trajectory') bodyHtml = renderTrajectory(MOCK);
-      if (cur === 'outcomes')   bodyHtml = renderOutcomes();
+      if (cur === 'outcomes')    bodyHtml = renderOutcomes();
+      if (cur === 'methodology') bodyHtml = renderMethodologyTab();
       if (cur === 'analytics')  { bodyHtml = renderPlatformAnalytics(); }
     } else if (_activeView === 'funders') {
       bodyHtml = renderFunder(cur);

@@ -2,6 +2,12 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "LLPA Certificate Preview",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "/Users/shawnalimohammadi/Downloads/Yoma - Shawn 2026/vc_renderer_umuzi_sustained_livelihoods_adapted", "-l", "3001", "--no-clipboard"],
+      "port": 3001
+    },
+    {
       "name": "Static dev server (serve)",
       "runtimeExecutable": "npx",
       "runtimeArgs": ["serve", "public", "-l", "3000"],

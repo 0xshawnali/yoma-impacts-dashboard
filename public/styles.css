@@ -462,3 +462,30 @@ body {
   .funder-contrib-box { margin-left: 0; width: 100%; text-align: left; }
   .alloc-right { min-width: 0; flex-wrap: wrap; }
 }
+
+/* ── Methodology library ── */
+.meth-card {
+  transition: box-shadow 0.15s;
+}
+.meth-card:hover {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.meth-tag {
+  display: inline-block;
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  margin: 2px 2px 2px 0;
+  font-family: 'Montserrat', monospace;
+  line-height: 1.4;
+}
+.meth-tag-reg {
+  font-weight: 700;
+  margin-right: 3px;
+}
+.meth-live-strip {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+}
